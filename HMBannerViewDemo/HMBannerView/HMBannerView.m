@@ -7,7 +7,6 @@
 //
 
 #import "HMBannerView.h"
-#import "UIImageView+WebCache.h"
 
 @interface HMBannerView()<CAAnimationDelegate>{
     
@@ -76,7 +75,6 @@
     }
     [self addSubview:self.pageControl];
     
-//    [_imageView sd_setImageWithURL:[NSURL URLWithString:[_imageArr objectAtIndex:_currentIndex]] placeholderImage:[UIImage imageNamed:@"my_course_def"]];
     _imageView.image = [UIImage imageNamed:[_imageArr objectAtIndex:_currentIndex]];
     
     [self setupTimer];
@@ -105,7 +103,6 @@
         _currentIndex = _imageArr.count - 1;
     }
     self.pageControl.currentPage = _currentIndex;
-//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:_imageArr[_currentIndex]] placeholderImage:[UIImage imageNamed:@"my_course_def"]];
     self.imageView.image = [UIImage imageNamed:[_imageArr objectAtIndex:_currentIndex]];
     [self transTionWithsubtype:kCATransitionFromLeft];
 }
@@ -117,7 +114,6 @@
         _currentIndex = 0;
     }
     self.pageControl.currentPage = _currentIndex;
-//    [self.imageView sd_setImageWithURL:[NSURL URLWithString:_imageArr[_currentIndex]] placeholderImage:[UIImage imageNamed:@"my_course_def"]];
     self.imageView.image = [UIImage imageNamed:[_imageArr objectAtIndex:_currentIndex]];
     [self transTionWithsubtype:kCATransitionFromRight];
 }
